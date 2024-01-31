@@ -11,6 +11,14 @@ body{
     width: 100%;
 }
 
+h1{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
 .contenedor {
     display: flex;
 }
@@ -45,7 +53,7 @@ header{
 }
 
 .columna-lateral {
-    width: 50%;
+    width: 33.33%;
     background-color: #f2f2f2;
     padding: 10px;
     float: left;
@@ -57,7 +65,7 @@ header{
 }
 
 .columna-central {
-    width: 55%;
+    width: 43%;
     font-family: 'Nunito Sans', sans-serif;
     text-align: center;
     padding-left: 15%;
@@ -105,30 +113,114 @@ header{
 
 .estilo_lateral{
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
 }
 
+.titulo2{
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: center;
+}
+
+.estilo_noticia{
+   padding-left: 20%;
+}
+.mapa{
+    width: 500px;
+    height: 350px;
+}
+
+iframe{
+    width: 360px;
+    height: 315px;
+}
+.carousel {
+    position: relative;
+    width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.navigation button {
+    background-color: #ddd;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+}
+
+.slides input[type="radio"]:checked + .navigation button {
+    background-color: #555;
+    color: white;
+}
+
 @media only screen and (max-width: 700px){
-    .contenedor{
-        display: inline;
+
+    body{
+        margin: 0%
     }
-    .columna-lateral{
-        width: 100%;
-      
+    .carousel {
+        max-width: 100%; 
     }
-    .columna_lateral2{
+
+    .columna-lateral {
         width: 100%;
+        text-align: center;
+    }
+
+    .columna_lateral2 {
+        width: 100%;
+        text-align: center;
+        padding-left: 0%;
+
     }
     
     .columna-central{
         width: 100%;
+        padding-left: 0%;
     }
 
-    .flex{
+    .row{
+        width: 100%;
+    }
+
+    .contenedor {
         display: inline;
     }
 
+    .mapa{
+        width: 100%;
+    }
+
     
-    
+
+
 }
+
+

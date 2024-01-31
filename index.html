@@ -11,18 +11,16 @@
         <p class="titulo_principal">LIVERPOOL</p>
     </header>
     <div class="contenedor">
-        <div class="columna-lateral">
+        <div class="columna-lateral row">
            <h3 class="menu_estilo">Menu de opciones</h3>
-           <ul>
-               <li class="estilo_menu"><a href="">Galeria de imagenes</a></li>
-               <li class="estilo_menu"><a href="#seccion1">Lugares Interes</a></li>
-               <li class="estilo_menu"><a href="#seccion3">Mapa</a></li>
-           </ul>
+           <li class="estilo_menu"><a href="seccion2">Galeria de imagenes</a></li>
+           <li class="estilo_menu"><a href="#seccion1">Lugares de Interes</a></li>
+           <li class="estilo_menu"><a href="#seccion3">Mapa</a></li>
         </div>
         <div class="columna-central row" id="seccion1">
-            <h1>Lugares Interes</h1>
+            <h1>Lugares de Interes</h1>
             <div>
-                <div class="card">
+                <div>
                    <h4>Alber Dock</h4>
                    <p>Albert Dock fue construido en 1.846 a orillas del río Mersey y declarado Patrimonio de la Humanidad, este complejo de muelles y almacenes históricos, fue la primera construcción del Reino Unido fabricada en hierro, ladrillo y piedra (sin utilizar madera) y después de unos años cerrado, se rehabilitó para convertirlo en una de las atracciones turísticas más visitadas del país.</p>
                    <div id="img-1"></div>
@@ -52,11 +50,66 @@
             <div id="seccion3">
                <h1>Mapa</h1>
                <p>Este es el mapa de la poblacion de Liverpool</p>
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152202.1992909473!2d-3.227876373488643!3d53.41197600322254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487adf8a647060b7%3A0x42dc046f3f176e01!2sLiverpool%2C%20Reino%20Unido!5e0!3m2!1ses!2ses!4v1706704659009!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+               <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152202.1992909473!2d-3.227876373488643!3d53.41197600322254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487adf8a647060b7%3A0x42dc046f3f176e01!2sLiverpool%2C%20Reino%20Unido!5e0!3m2!1ses!2ses!4v1706704659009!5m2!1ses!2ses" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+            <div class="columna-central" id="seccion2">
+                <h1>Galeria de imagenes</h1>
+                <div class="carousel">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="./IMG/crosby_beach.jpg" alt="Slide 1">
+                        </div>
+                        <div class="slide">
+                            <img src="./IMG/catedral.jpg" alt="Slide 2">
+                        </div>
+                        <div class="slide">
+                            <img src="./IMG/centro_comercial_liverpoolone.jpg" alt="Slide 3">
+                        </div>
+                    </div>
+                
+                    <button class="prev" onclick="prevSlide()">❮</button>
+                    <button class="next" onclick="nextSlide()">❯</button>
+                </div>
+            </div>
+            <script>
+                let currentIndex = 0;
+            
+                function showSlide(index) {
+                    const slides = document.querySelector('.slides');
+                    const totalSlides = document.querySelectorAll('.slide').length;
+            
+                    if (index >= totalSlides) {
+                        currentIndex = 0;
+                    } else if (index < 0) {
+                        currentIndex = totalSlides - 1;
+                    } else {
+                        currentIndex = index;
+                    }
+            
+                    const transformValue = -100 * currentIndex + '%';
+                    slides.style.transform = 'translateX(' + transformValue + ')';
+                }
+            
+                function prevSlide() {
+                    showSlide(currentIndex - 1);
+                }
+            
+                function nextSlide() {
+                    showSlide(currentIndex + 1);
+                }
+            </script>
         </div>
         <div class="columna-lateral2 row">
             <h1 class="estilo_lateral">Noticias</h1>
+            <div class="cuadrado">
+                <h4 class="titulo2">La economia de Liverpool baja</h4>
+                <iframe class="estilo_noticia" src="https://www.youtube.com/embed/xq0bGpwp1qg?si=gTgVDNqO1qNW4oAq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <br>
+            <div class="cuadrado">
+                <h4 class="titulo2">UNESCO quita a Liverpool el estatus de Patrimonio de la Humanidad</h4>
+                <iframe  class="estilo_noticia" src="https://www.youtube.com/embed/H_DMEjkc5LU?si=ocIydsRDrok4MGfW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 </body> 
